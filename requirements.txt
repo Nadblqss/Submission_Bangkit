@@ -1,5 +1,4 @@
-Babel==2.11.0
-Babel==2.14.0
+Babel
 matplotlib==3.8.3
 pandas==2.2.1
 plotly==5.19.0
