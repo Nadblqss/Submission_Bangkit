@@ -10,7 +10,6 @@ import streamlit as st
 import plotly.express as px
 import datetime
 from pathlib import Path
-from babel.numbers import format_currency
 
 
 # Load Data
