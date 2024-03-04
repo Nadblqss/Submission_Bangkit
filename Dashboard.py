@@ -20,8 +20,24 @@ df['dteday'] = pd.to_datetime(df['dteday'])
 st.title('Dashboard Bike Sharing')
 
 # Membuat Sidebar
+# Membuat Sidebar
+def sidebar(df):
+    df["dteday"] = pd.to_datetime(df["dteday"])
+    min_date = df["dteday"].min()
+    max_date = df["dteday"].max()
+
     with st.sidebar:
         st.image("https://raw.githubusercontent.com/Nadblqss/submission/main/IMAGE.jpeg")
+
+        date = st.date_input(
+            label="**Rentang Waktu**", 
+            min_value=min_date, 
+            max_value=max_date,
+            value=[min_date, max_date],
+        )
+    def on_change():
+        st.session_state.date = date
+    return date
 
 if __name__ == "__main__":
     hour_df = pd.read_csv('https://raw.githubusercontent.com/Nadblqss/submission/main/hour_clean.csv')
